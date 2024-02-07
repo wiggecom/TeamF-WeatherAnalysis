@@ -20,6 +20,7 @@ namespace TeamF_WeatherAnalysis.Helpers
             MatchCollection matches = regex.Matches(text);
             if (matches.Count > 0)
             {
+                
                 //Console.WriteLine("Number of matches: " + matches.Count);
                 foreach (Match match in matches)
                 {
@@ -29,6 +30,9 @@ namespace TeamF_WeatherAnalysis.Helpers
                     int hour = 0;
                     int minute = 0;
                     int second = 0;
+                    double temp = 0.0;
+                    int moist = 0;
+                    bool indoor = false;
                     if (match.Groups.Count > 0)
                     {
                         string newDate = "";
@@ -63,16 +67,61 @@ namespace TeamF_WeatherAnalysis.Helpers
                                 case "second":
                                         second = int.Parse(group.Value);
                                     break;
-
+                                case "indoor":
+                                    if (group.Value == "Inne")
+                                    {
+                                        indoor = true;
+                                    }
+                                    else
+                                    {
+                                        indoor = false;
+                                    }
+                                    break;
+                                case "temp":
+                                    string tempStr = group.Value;
+                                    tempStr = tempStr.Replace('.', ',');
+                                    temp = double.Parse(tempStr);
+                                    break;
+                                case "moist":
+                                    moist = int.Parse(group.Value);
+                                    break;
                             }
                         }
                     }
+                    // Output to console
                     if (year != 0 && month != 0 && day != 0)
                     {
-                        Console.WriteLine(year + "\\" + month + "\\" + day + " - " + hour + ":" + minute + ":" + second);
+                        if (indoor == true)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor= ConsoleColor.Yellow;
+                        }
+                        Console.Write(year + "\\" + month + "\\" + day + " - " + hour + ":" + minute + ":" + second + " ");
+                        if (temp > 15)
+                        {
+                            Console.ForegroundColor=ConsoleColor.Red;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                        }
+                        Console.Write("\tT:"+ temp);
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.Write(" - ");
+                        if (moist > 78)
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                        }
+                        Console.WriteLine("M:" + moist);
+                        Console.ResetColor();
                     }
-                    //Console.WriteLine(match.Value + " på plats " + match.Index + " med längden " + match.Length);
-
                 }
             }
         }

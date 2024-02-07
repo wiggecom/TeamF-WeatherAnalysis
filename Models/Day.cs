@@ -11,9 +11,10 @@ namespace TeamF_WeatherAnalysis.Models
         public int YearInt { get; set; }
         public int MonthInt { get; set; }
         public int DayInt { get; set; }
-        public bool Indoor { get; set; }
-        public int AvgTemp { get; set; }
-        public int AvgMoist { get; set; }
+        public double AvgTempIn { get; set; }
+        public double AvgTempOut { get; set; }
+        public int AvgMoistIn { get; set; }
+        public int AvgMoistOut { get;set; }
 
     }
 }

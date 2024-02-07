@@ -26,6 +26,7 @@ namespace TeamF_WeatherAnalysis
             ReadWrite.ReadAll("tempdata_src.txt");
 
             Console.WriteLine("---------- END OF FILE ----------");
+            Console.WriteLine("--- Press any key to continue ---");
             Console.ReadKey();
         }
         

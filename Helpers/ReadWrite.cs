@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using TeamF_WeatherAnalysis.Models;
 
 namespace TeamF_WeatherAnalysis.Helpers
 {
@@ -29,8 +30,8 @@ namespace TeamF_WeatherAnalysis.Helpers
 
                 while (line != null)
                 {
-                    string pattern = "(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2}).(?<hour>\\d{2}):(?<minute>\\d{2}):(?<second>\\d{2})";
-                    TextAnalyser.Test(line, pattern, "2017", "01", "10");
+                    string pattern = "(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2}).(?<hour>\\d{2}):(?<minute>\\d{2}):(?<second>\\d{2}),(?<indoor>(Inne|Ute)),(?<temp>\\d{1,2}.\\d).(?<moist>\\d{2})";
+                    TextAnalyser.Test(line, pattern, "2016", "10", "06");
                     line = reader.ReadLine();
                 }
             }
