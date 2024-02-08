@@ -10,7 +10,18 @@ namespace TeamF_WeatherAnalysis.Helpers
 {
     internal class TextAnalyser
     {
-        public static void Test(string text, string pattern, string yearStr, string monthStr, string dayStr)
+        public static void Test(string text, string pattern)
+        {
+            Regex regex = new Regex(pattern);
+            //RegexOptions options = RegexOptions.IgnoreCase;
+            MatchCollection matches = regex.Matches(text);
+            Console.WriteLine("Number of matches: " + matches.Count);
+            foreach (Match match in matches)
+            {
+                Console.WriteLine(match.Value + " på plats " + match.Index + " med längden " + match.Length);
+            }
+        }
+        public static void NoLinq(string text, string pattern, string yearStr, string monthStr, string dayStr)
         {
             int year = 0;
             int month = 0;
@@ -20,8 +31,6 @@ namespace TeamF_WeatherAnalysis.Helpers
             MatchCollection matches = regex.Matches(text);
             if (matches.Count > 0)
             {
-                
-                //Console.WriteLine("Number of matches: " + matches.Count);
                 foreach (Match match in matches)
                 {
                     year = 0;

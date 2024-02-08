@@ -9,6 +9,17 @@ namespace TeamF_WeatherAnalysis
     {
         static void Main(string[] args)
         {
+            string year = "2016";
+            string month = "09";
+            string day = "26";
+            
+            ReadWrite.ReadAllNoLinq(Statics.file, Patterns.matchAll, year, month, day);
+            Console.WriteLine("--- Press any key to continue ---");
+            Console.ReadKey();
+            ReadWrite.ReadAll(Statics.file);
+            Console.WriteLine("---------- END OF FILE ----------");
+            Console.WriteLine("--- Press any key to continue ---");
+            Console.ReadKey();
             #region check formula
             //while (true)
             //{
@@ -23,12 +34,7 @@ namespace TeamF_WeatherAnalysis
 
             //MoldIndex.CrunchNumbers();
             #endregion
-            ReadWrite.ReadAll("tempdata_src.txt");
-
-            Console.WriteLine("---------- END OF FILE ----------");
-            Console.WriteLine("--- Press any key to continue ---");
-            Console.ReadKey();
         }
-        
+
     }
 }
