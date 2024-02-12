@@ -23,6 +23,7 @@ namespace TeamF_WeatherAnalysis.Helpers
                 }
             }
         }
+
         public static void ReadAll(string fileName)
         {
             using (StreamReader reader = new StreamReader(Statics.path + fileName))

@@ -138,7 +138,7 @@ namespace TeamF_WeatherAnalysis.Helpers
         {
             // ((luftfuktighet -78) * (Temp/15))/0,22
             double result = ((moisture - 78) * (temp / 15)) / 0.22;
-            Console.WriteLine(result);
+            //Console.WriteLine(result);
             return result;
         }
     }

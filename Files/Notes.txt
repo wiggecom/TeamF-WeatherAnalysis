@@ -1,0 +1,41 @@
+﻿Följande information ska kunna visas
+Utomhus:
+◦ Medeltemperatur och luftfuktighet per dag, för valt datum (sökmöjlighet med
+validering)
+◦ Sortering av varmast till kallaste dagen enligt medeltemperatur per dag
+◦ Sortering av torrast till fuktigaste dagen enligt medelluftfuktighet per dag
+◦ Sortering av minst till störst risk av mögel
+◦ Datum för meteorologisk Höst
+◦ Datum för meteologisk vinter (OBS Mild vinter!)
+
+Följande information ska kunna visas
+Inomhus
+◦ Medeltemperatur för valt datum (sökmöjlighet med validering)
+◦ Sortering av varmast till kallaste dagen enligt medeltemperatur per dag
+◦ Sortering av torrast till fuktigaste dagen enligt medelluftfuktighet per dag
+◦ Sortering av minst till störst risk av mögel
+
+Textfil som ska skapas
+◦ En textfil ska skapas som innehåller följande information.
+◦ Medeltemperatur ute och inne, per månad
+◦ Medelluftfuktighet inne och ute, per månad
+◦ Medelmögelrisk inne och ute, per månad.
+◦ Datum för höst och vinter 2016 (om något av detta inte inträffar, ange när det var som
+närmast)
+◦ Skriv också ut algoritmen för mögel
+
+Dataregler
+◦ Meterologisk höst:
+◦ Hösten anländer om det råder hösttemperatur fem dygn i följd. Hösttemperatur är det då
+dygnsmedeltemperaturen är under 10,0°C, men ännu inte fem dygn i följd. Höstens
+ankomstdatum avser det första dygnet av fem med hösttemperaturer. Den 1 augusti har satts
+som det tidigaste tillåtna datumet för höstens ankomst. Senast möjliga datum för höstens
+ankomst är den 14 februari.
+◦ Meterologisk vinter
+◦ Vintern anländer om det råder vintertemperatur fem dygn i följd. Vintertemperatur är det då
+dygnsmedeltemperaturen är 0,0°C eller lägre, men ännu inte fem dygn i följd. Vinterns
+ankomstdatum avser det första dygnet av fem med vintertemperaturer.
+
+((luftfuktighet -78) * (Temp/15))/0,22
+ 
+

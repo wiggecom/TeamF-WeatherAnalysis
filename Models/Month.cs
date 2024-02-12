@@ -10,7 +10,7 @@ namespace TeamF_WeatherAnalysis.Models
     {
         public int YearInt { get; set; }
         public int MonthInt { get; set; }
-        public List<Day> Days { get; set; }
+        public List<DayMeasure> Days { get; set; }
         public int AvgTemp { get; set; }
         public int AvgMoist { get; set; }
     }
